@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: magazzini-microservice
+server:
+  port: 8081
+  eureka:
+    instance:
+      hostname: 10.65.120.9

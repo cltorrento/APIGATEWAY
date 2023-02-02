@@ -1,0 +1,19 @@
+server:
+  port: 8080
+eureka:
+  instance:
+    hostname: localhost
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: magazzini-microservice
+          uri: http://10.65.120.9:8081/
+          predicates:
+            - Path=/magazzini/**
+        - id: products-microservice
+          uri: http://localhost:8083/
+          predicates:
+            - Path=/products/**
